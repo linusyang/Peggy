@@ -103,12 +103,16 @@ generate defs = do
       s <- newName "s"
       sigD (mkName name) $
           forallT [PlainTV str, PlainTV s]
-                  (cxt [classP ''LL.ListLike [varT str, conT ''Char]]) $
+                  (cxt [classP' ''LL.ListLike [varT str, conT ''Char]]) $
           conT ''Parser `appT`
           (conT tblName `appT` varT str) `appT`
           varT str `appT`
           varT s `appT`
           typ
+      where classP' cla tys
+              = do
+                  tysl <- sequence tys
+                  return (foldl AppT (ConT cla) tysl)
   
   -- Generate Parser
   genP :: Bool -> Expr -> ExpQ

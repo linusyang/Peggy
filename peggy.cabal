@@ -1,5 +1,5 @@
 Name:                peggy
-Version:             0.3.2
+Version:             0.3.2.1
 Synopsis:            The Parser Generator for Haskell
 
 Description:
@@ -44,11 +44,11 @@ Library
                      , Text.Peggy.Syntax
   
   Build-depends:       base             == 4.*
-                     , mtl              >= 2.0
-                     , ListLike         == 3.1.*
-                     , hashtables       == 1.0.*
-                     , monad-control    == 0.3.*
-                     , template-haskell >= 2.5 && < 2.9
+                     , mtl              >= 2.2.1
+                     , ListLike         >= 3.1
+                     , hashtables       >= 1.0
+                     , monad-control    >= 0.3
+                     , template-haskell >= 2.10
                      , haskell-src-meta >= 0.5
   
 Executable peggy-example
