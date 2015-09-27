@@ -1,6 +1,4 @@
-flags:
-  peggy:
-    build-example: false
+flags: {}
 packages:
 - '.'
 extra-deps: []

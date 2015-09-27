@@ -25,12 +25,9 @@ Extra-source-files:  README.md
                      bootstrap/Bootstrap.hs
                      bootstrap/peggy.peggy
 
-flag build-example
-  default:           False
-
 Source-repository head
   Type:              git
-  Location:          git://github.com/tanakh/Peggy.git
+  Location:          git://github.com/linusyang/Peggy.git
 
 Library
   Exposed-modules:     Text.Peggy
@@ -50,13 +47,3 @@ Library
                      , monad-control    >= 0.3
                      , template-haskell >= 2.10
                      , haskell-src-meta >= 0.5
-  
-Executable peggy-example
-  Hs-source-dirs:      example
-  Main-is:             Main.hs
-
-  Build-depends:       base  == 4.*
-                     , peggy
-
-  if !flag(build-example)
-    Buildable:         False
